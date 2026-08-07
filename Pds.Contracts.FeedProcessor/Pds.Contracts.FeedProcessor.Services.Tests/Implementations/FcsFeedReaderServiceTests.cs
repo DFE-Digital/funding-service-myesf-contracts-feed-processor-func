@@ -1,5 +1,5 @@
-﻿using AutoMapper;
-using FluentAssertions;
+﻿using FluentAssertions;
+using MapsterMapper;
 using Microsoft.Extensions.Options;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;

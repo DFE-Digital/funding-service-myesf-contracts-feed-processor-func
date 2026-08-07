@@ -1,4 +1,6 @@
 ﻿using Azure.Storage.Blobs;
+using Mapster;
+using MapsterMapper;
 using Microsoft.Azure.Cosmos.Table;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,6 +9,7 @@ using Pds.Contracts.FeedProcessor.Services.Configuration;
 using Pds.Contracts.FeedProcessor.Services.Extensions;
 using Pds.Contracts.FeedProcessor.Services.Implementations;
 using Pds.Contracts.FeedProcessor.Services.Interfaces;
+using Pds.Contracts.FeedProcessor.Services.Mapster;
 using Pds.Contracts.FeedProcessor.Services.Models;
 using Pds.Core.ApiClient.Interfaces;
 using Pds.Core.ApiClient.Services;
@@ -71,7 +74,8 @@ namespace Pds.Contracts.FeedProcessor.Services.DependencyInjection
             });
             services.AddScoped<IContractEventValidationService, ContractEventValidationService>();
 
-            services.AddAutoMapper(typeof(FeatureServiceCollectionExtensions).Assembly);
+            services.AddSingleton(new TypeAdapterConfig().Configure());
+            services.AddSingleton<IMapper, ServiceMapper>();
 
             return services;
         }

@@ -1,25 +1,22 @@
-﻿using AutoMapper;
-using System.ServiceModel.Syndication;
+﻿using System.ServiceModel.Syndication;
 using System.Text;
 using System.Xml;
 
-namespace Pds.Contracts.FeedProcessor.Services.AutoMapperProfiles
+namespace Pds.Contracts.FeedProcessor.Services.Mapster
 {
     /// <summary>
     /// A value converter to conver syndication content to xml string.
     /// </summary>
-    /// <seealso cref="AutoMapper.IValueConverter{System.ServiceModel.Syndication.SyndicationContent, string}" />
-    public class SyndicationContentToXmlStringConverter : IValueConverter<SyndicationContent, string>
+    public class SyndicationContentToXmlStringConverter
     {
         /// <summary>
         /// Perform conversion from source member value to destination member value.
         /// </summary>
         /// <param name="sourceMember">Source member object.</param>
-        /// <param name="context">Resolution context.</param>
         /// <returns>
         /// Destination member value.
         /// </returns>
-        public string Convert(SyndicationContent sourceMember, ResolutionContext context)
+        public string Convert(SyndicationContent sourceMember)
         {
             var contentBuilder = new StringBuilder();
             XmlWriterSettings settings = new XmlWriterSettings { Indent = true };

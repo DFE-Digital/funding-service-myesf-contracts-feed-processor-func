@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿using MapsterMapper;
 using Microsoft.Extensions.Options;
 using Pds.Contracts.FeedProcessor.Services.Configuration;
 using Pds.Contracts.FeedProcessor.Services.Interfaces;
