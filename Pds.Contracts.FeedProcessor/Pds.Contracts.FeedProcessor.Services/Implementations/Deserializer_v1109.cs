@@ -117,7 +117,7 @@ namespace Pds.Contracts.FeedProcessor.Services.Implementations
                     Action = Audit.Api.Client.Enumerations.ActionType.ContractFeedEventFilteredOut,
                     Message = msg,
                     Severity = Audit.Api.Client.Enumerations.SeverityLevel.Information,
-                    Ukprn = evt.UKPRN,
+                    Ukprn = evt.Ukprn,
                     User = _auditApiUser
                 });
             }
@@ -129,7 +129,7 @@ namespace Pds.Contracts.FeedProcessor.Services.Implementations
         {
             var evt = new ContractEvent();
 
-            evt.UKPRN = contractElement.GetValue<int>("c:contractor/c:ukprn", ns);
+            evt.Ukprn = contractElement.GetValue<int>("c:contractor/c:ukprn", ns);
 
             var contractNumber = contractElement.GetValue<string>("c:contractNumber", ns);
             evt.ContractNumber = contractNumber;

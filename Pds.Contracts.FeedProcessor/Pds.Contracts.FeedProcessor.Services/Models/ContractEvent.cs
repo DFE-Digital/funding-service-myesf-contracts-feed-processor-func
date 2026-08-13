@@ -18,7 +18,7 @@ namespace Pds.Contracts.FeedProcessor.Services.Models
         /// <summary>
         /// Gets or sets the UKPRN.
         /// </summary>
-        public int UKPRN { get; set; }
+        public int Ukprn { get; set; }
 
         /// <summary>
         /// Gets or sets the contract number.

@@ -651,7 +651,7 @@ namespace Pds.Contracts.FeedProcessor.Services.Tests.Unit
                     StartDate = new DateTime(2020, 8, 1),
                     Status = ContractStatus.PublishedToProvider,
                     Type = "Conditions of Funding (Grant) (Trust)",
-                    UKPRN = 10038183,
+                    Ukprn = 10038183,
                     Value = 206967m
                 },
                 Result = ContractProcessResultType.Successful
@@ -697,7 +697,7 @@ namespace Pds.Contracts.FeedProcessor.Services.Tests.Unit
                     SignedOn = DateTime.Parse(date).AddDays(1),
                     Status = ContractStatus.PublishedToProvider,
                     Type = "Contract for Services",
-                    UKPRN = 10000001,
+                    Ukprn = 10000001,
                     Value = 9099922.0000m
                 },
                 Result = result,
